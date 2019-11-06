@@ -18,15 +18,35 @@ a.nav-link{
   width: 210px;
 }
 
+.andriodbutton{
+  margin: 10px;
+  padding: 10px;
+  background-color: #c70d3a;
+}
+
+.andriodbutton:hover{
+  background-color: #b22222;
+}
+
+.intro .entry-header{
+  margin-top: 150px;
+}
+
+.intro button{
+  margin-top: 400px;
+}
+/* .sec1{
+  margin-top: 100px;
+  background-image: -webkit-linear-gradient(65deg, #383749 30%, #E4E9FD 65%);
+} */
+//#A683E3
+
 .home{
-  width:240px;
+  margin-right: 70px;
   padding-left: 30px;
 }
 
 .csit-logo{
-  position: absolute;
-  left:650px;
-  top:230px;
   width:519px;
   height: 160px;
 }
@@ -39,35 +59,28 @@ div.playstore{
   left: 85rem;
 }
 
-.andriodbutton{
-  margin: 20px;
-  padding: 10px;
-  background-color: #c70d3a;
-}
 
-.andriodbutton:hover{
-  /* color:#272121;   */
-  background-color: #b22222;
-}
 
 .applebutton{
   padding: 10px;
+  margin: 10px;
 }
 
 
-@media (max-width:1000px) {
+@media (max-width:1100px) {
   div.playstore {
     left:0;
   }
   img.csit-logo{
-    position: absolute;
-    left:100px;
-    top:150px;
     width: 259px;
     height: 77px;
   }
   h1.site-title a {
       color: #5f6769;
+  }
+  .intro div button{
+    margin: 10px;
+    margin-top: 80px;
   }
 }
 
@@ -107,6 +120,7 @@ a:hover, a:active {
     left: 0;
     z-index: 9999;
     width: 100%;
+    background-color: #d4d7dd;
     /* background-image: -webkit-linear-gradient(65deg, #383749 50%, #ffffff  50%); */
 }
 //#A683E3
@@ -260,11 +274,6 @@ a:hover, a:active {
     color: #c70d3a;
 }
 
-@media screen and (min-width: 576px){
-    /*.site-title {*/
-        /*font-size: 112px;*/
-    /*}*/
-}
 
 /*
   Hamburger Menu
@@ -402,13 +411,8 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
-.hero-content {
-    /* background: url("images/hero-bg.jpg") no-repeat center; */
-    /* background-size: cover; */
-    background-image: -webkit-linear-gradient(65deg, #383749 30%, #E4E9FD 65%);
-}
 
-//#A683E3
+
 
 .hero-content-overlay {
     background: rgba(21,20,33,.5);
