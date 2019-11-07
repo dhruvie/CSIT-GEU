@@ -60,7 +60,24 @@ img {
 
 
 /* Contact */
-
+.visioncontent h1,h4{
+  color: #ce2e6c;
+}
+.visioncontent{
+  margin:0 9% 0 11%;
+  padding:3.125%;
+}
+.visioncontent p{
+  font-size: 20px;
+  color:#fbc1bc;
+}
+.header{
+  padding-bottom: 1.875%;
+}
+.disclaimercontent h1{
+  color: #ce2e6c;
+  padding-bottom: 2%;
+}
 
 section {
   /* background: url("images/hero-bg.jpg") no-repeat center; */
