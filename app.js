@@ -17,6 +17,14 @@ app.get("/",function(req,res){
   res.render("index");
 });
 
+app.get("/visionandmission",function(req,res){
+  res.render("vision-mission");
+});
+
+app.get("/disclaimer",function(req,res){
+  res.render("disclaimer");
+});
+
 app.get("/contact", function(req, res){
   res.render("contact");
 });
