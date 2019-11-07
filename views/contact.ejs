@@ -1,34 +1,37 @@
 <%- include("partials/header"); -%>
-<h1 style="text-align:center;">CONTACT US</h1>
-<div class="row ">
+<section class="contact">
+  <h1 class="h1Contact">CONTACT US</h1>
+  <hr>
+  <div class="">
 
 
-  <div class="col-lg-6 col-md-12 col-sm-12 Login_Box">
-    <input class="Name" type="text" name="" value="" placeholder="NAME">
-    <br>
-    <input class="Email_id" type="text" name="Login_id" value="" placeholder="EMAIL ID">
-    <br>
-    <input class="Message" type="textarea" name="message" value="" placeholder="Write Your Message here...">
-    <br>
-    <input type="submit" name="" value="Submit" class="btn btn-outline-secondary btn-lg">
+    <div class="Login_Box">
+      <form class="" action="index.html" method="post">
+        <input class="Name" type="text" name="" value="" placeholder="NAME" autocomplete="off">
+        <br>
+        <input class="Email_id" type="email" name="Login_id" value="" placeholder="EMAIL ID">
+        <br>
+        <textarea name="name" class="Message" rows="6" autocomplete="off" placeholder="Write your Message here.."></textarea>
+        <br>
+        <button type="submit" class="btn btn-outline-dark btn-lg">Submit</button>
+      </form>
+    </div>
+
+    <div class="Login_Box">
+      <h4>Dr. Devesh Pratap Singh</h4>
+      <h5>
+        Department of Computer Science and Engineering
+        Head of Department
+        <br>
+        Email: devesh.geu@gmail.com
+        <br>
+        Ph: +91-135-2643421-288
+      </h5>
+
+    </div>
   </div>
+</section>
 
-  <div class="col-lg-6 col-md-12 col-sm-12">
-    <h3>Dr. Devesh Pratap Singh</h3>
-    <h4>
-      Department of Computer Science and Engineering
-      Head of Department
-      <br>
-      Email: devesh.geu@gmail.com
-      <br>
-      Ph: +91-135-2643421-288
-    </h4>
-
-  </div>
-
-
-
-</div>
 
 
 <%- include("partials/footer"); -%>
