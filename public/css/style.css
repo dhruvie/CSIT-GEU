@@ -159,6 +159,13 @@ div.playstore{
   /* text-align: center; */
 }
 
+=======
+.icon-image{
+  width: 50px;
+  height: 45px;
+  /* text-align: center; */
+}
+
 .icon-image:hover{
   color: #4dd599;
   /* background-color: #757686; */
