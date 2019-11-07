@@ -14,9 +14,18 @@ img {
 /*--------------------------------------------------------------
 # Links
 --------------------------------------------------------------*/
-a.nav-link{
-  width: 210px;
+
+
+section {
+  /* background: url("images/hero-bg.jpg") no-repeat center; */
+  /* background-size: cover; */
+  background-image: -webkit-linear-gradient(65deg, #383749 30%, #E4E9FD 65%);
 }
+
+a.nav-link {
+  width: 125px;
+}
+
 
 .andriodbutton{
   margin: 10px;
