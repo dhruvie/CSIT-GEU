@@ -23,9 +23,15 @@ section {
 }
 
 a.nav-link {
-  width: 125px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
+a.nav-link:hover{
+  font-size: 1.1rem;
+  background-color: #e3e7f1;
+  color: white;
+}
 
 .andriodbutton{
   margin: 10px;
@@ -48,7 +54,6 @@ a.nav-link {
   margin-top: 100px;
   background-image: -webkit-linear-gradient(65deg, #383749 30%, #E4E9FD 65%);
 } */
-//#A683E3
 
 .home{
   margin-right: 70px;
@@ -69,6 +74,85 @@ div.playstore{
 }
 
 
+first-footer{
+  margin: 0;
+}
+
+.footer{
+  color: #beebe9;
+  padding-top: 55px;
+  background-color: #110133;
+}
+
+.footer a.courses-link{
+  color: white;
+}
+
+.footer a.useful-link{
+  color: white;
+}
+
+.footer a:hover{
+  color: #dcffcc;
+  text-decoration: none;
+}
+
+.footer-text{
+  color: #fff;
+}
+
+.footer-icon{
+  color: #fff;
+}
+
+.facebook:hover{
+  color: #3b5998;
+  background-color: white;
+  padding-left: 17px;
+  padding-right: 17px;
+  padding-top: 3px;
+  padding-top: 3px;
+}
+
+.twitter:hover{
+  color: #00acee;
+  background-color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 3px;
+  padding-top: 3px;
+}
+
+.youtube:hover{
+  color: #cd201f;
+  background-color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 3px;
+  padding-top: 3px;
+}
+
+.linkedin:hover{
+  color: #0077B5;
+  background-color: white;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 3px;
+  padding-top: 3px;
+}
+
+.instagram:hover{
+  color: #e4405f;
+  background-color: white;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 3px;
+  padding-top: 3px;
+}
+
+/* .fa {
+    color: white !important;
+} */
 
 .applebutton{
   padding: 10px;
