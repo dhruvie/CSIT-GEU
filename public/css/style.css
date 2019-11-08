@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
 
 body {
@@ -11,6 +12,9 @@ img {
     vertical-align: baseline;
 }
 
+/*--------------------------------------------------------------
+# Links
+--------------------------------------------------------------*/
 
 /* Contact */
 .h1Contact {
@@ -56,11 +60,6 @@ img {
 
 
 /* Contact */
-
-
-/*--------------------------------------------------------------
-# Links
---------------------------------------------------------------*/
 .visioncontent h1,h4{
   color: #ce2e6c;
 }
@@ -80,15 +79,20 @@ img {
   padding-bottom: 2%;
 }
 
-
-section{
+section {
   background-image: -webkit-linear-gradient(65deg, #383749 30%, #E4E9FD 65%);
 }
 
 a.nav-link {
-  width: 125px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
+a.nav-link:hover{
+  font-size: 1.1rem;
+  background-color: #e3e7f1;
+  color: white;
+}
 
 .andriodbutton{
   margin: 10px;
@@ -107,7 +111,6 @@ a.nav-link {
 .intro button{
   margin-top: 400px;
 }
-
 
 .home{
   margin-right: 70px;
@@ -128,6 +131,47 @@ div.playstore{
 }
 
 
+first-footer{
+  margin: 0;
+}
+
+.footer{
+  color: #beebe9;
+  padding-top: 55px;
+  background-color: #110133;
+}
+
+.footer a.courses-link{
+  color: white;
+}
+
+.footer a.useful-link{
+  color: white;
+}
+
+.footer a:hover{
+  color: #dcffcc;
+  text-decoration: none;
+}
+
+.footer-text{
+  color: #fff;
+}
+
+.footer-icon{
+  color: #fff;
+}
+
+
+
+.time_syll_stud_Container{
+  padding: 1%
+}
+
+.time_syll_stud_Container h1, h2{
+  padding: 2.5%;
+  color: #0077B5;
+}
 
 .applebutton{
   padding: 10px;
@@ -150,9 +194,6 @@ div.playstore{
     margin: 10px;
     margin-top: 80px;
   }
-  /* .visioncontent{
-    margin: 0;
-  } */
 }
 
 .icon-image{
@@ -562,6 +603,10 @@ a:hover, a:active {
 --------------------------------*/
 .icon-boxes {
     border-bottom: 1px solid #ebebeb;
+}
+
+.icon-boxes h2{
+  color: #0077B5;
 }
 
 .icon-box {
