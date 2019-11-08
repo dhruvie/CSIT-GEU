@@ -80,8 +80,6 @@ img {
 }
 
 section {
-  /* background: url("images/hero-bg.jpg") no-repeat center; */
-  /* background-size: cover; */
   background-image: -webkit-linear-gradient(65deg, #383749 30%, #E4E9FD 65%);
 }
 
@@ -113,10 +111,7 @@ a.nav-link:hover{
 .intro button{
   margin-top: 400px;
 }
-/* .sec1{
-  margin-top: 100px;
-  background-image: -webkit-linear-gradient(65deg, #383749 30%, #E4E9FD 65%);
-} */
+
 
 .home{
   margin-right: 70px;
@@ -168,54 +163,17 @@ first-footer{
   color: #fff;
 }
 
-.facebook:hover{
-  color: #3b5998;
-  background-color: white;
-  padding-left: 17px;
-  padding-right: 17px;
-  padding-top: 3px;
-  padding-top: 3px;
+
+
+.time_syll_stud_Container{
+  padding: 1%
 }
 
-.twitter:hover{
-  color: #00acee;
-  background-color: white;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 3px;
-  padding-top: 3px;
-}
-
-.youtube:hover{
-  color: #cd201f;
-  background-color: white;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 3px;
-  padding-top: 3px;
-}
-
-.linkedin:hover{
+.time_syll_stud_Container h1, h2{
+  padding: 2.5%;
   color: #0077B5;
-  background-color: white;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-top: 3px;
-  padding-top: 3px;
 }
 
-.instagram:hover{
-  color: #e4405f;
-  background-color: white;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-top: 3px;
-  padding-top: 3px;
-}
-
-/* .fa {
-    color: white !important;
-} */
 
 .applebutton{
   padding: 10px;
@@ -648,6 +606,11 @@ a:hover, a:active {
 .icon-boxes {
     border-bottom: 1px solid #ebebeb;
 }
+
+.icon-boxes h2{
+  color: #0077B5;
+}
+
 
 .icon-box {
     width: 25%;

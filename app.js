@@ -29,6 +29,21 @@ app.get("/contact", function(req, res){
   res.render("contact");
 });
 
+app.get("/syllabus", function(req, res){
+  res.render("syllabus");
+});
+
+app.get("/timetable", function(req, res){
+  res.render("timetable");
+});
+
+app.get("/students", function(req, res){
+  res.render("students");
+});
+
+app.get("/notices", function(req, res){
+  res.render("notices");
+});
 
 
 app.listen(3000, function() {
