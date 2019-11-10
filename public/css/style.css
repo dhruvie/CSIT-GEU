@@ -17,7 +17,7 @@ img {
 # Links
 --------------------------------------------------------------*/
 
-/*Admin*/
+/*Admin login*/
 
 .loginBox{
   position: absolute;
@@ -103,6 +103,94 @@ img {
 }
 /*Admin*/
 
+
+/*Admin Home*/
+/* Navbar */
+
+
+
+/* Custom */
+.main-color-bg{
+  background-color: #e74c3c !important;
+  border-color: #c0392b !important;
+  color:#ffffff !important;
+}
+
+/* Header */
+#header{
+  background:#333333;
+  color:#ffffff;
+  padding: 90px;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+#header .create{
+  padding-top: 20px;
+}
+
+/* Breadcrumb */
+.breadcrumb{
+  background:#cccccc;
+  color:#333333;
+}
+
+.well{
+  padding: 20px 0;
+}
+.panel{
+  padding:30px 0;
+}
+.panel-title{
+  color:#007bff;
+}
+
+/* Progress Bars */
+.progress-bar{
+  background:#333333;
+  color:#ffffff;
+}
+
+.dash-box{
+  text-align:center;
+}
+
+#login{
+  margin-top:30px;
+}
+
+/* Footer */
+#footer{
+  background:#333333;
+  color:#ffffff;
+  text-align:center;
+  padding:19px;
+  margin-top:20px;
+}
+
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ecf0f1;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ffbbbc;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffbbbc;
+    background-color: #c0392b;
+  }
+}
+
+/* Admin Home */
+
+
+
+
+
 /* Contact */
 .h1Contact {
   padding: 2%;
@@ -166,7 +254,7 @@ img {
   padding-bottom: 2%;
 }
 
-section {
+section.sec1 {
   background-image: -webkit-linear-gradient(65deg, #383749 30%, #E4E9FD 65%);
 }
 
@@ -175,11 +263,11 @@ a.nav-link {
   margin-right: 10px;
 }
 
-a.nav-link:hover{
-  font-size: 1.1rem;
+#navbarTogglerDemo02 a.nav-link:hover{
   background-color: #e3e7f1;
   color: white;
 }
+
 .downloadbuttons{
   padding: 20px;
 }
@@ -437,7 +525,7 @@ a:hover, a:active {
 nav.navbar{
   position: fixed;
   width: 100%;
-  z-index: 1;
+  z-index: 9;
 }
 
 /*
