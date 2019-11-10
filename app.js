@@ -45,6 +45,12 @@ app.get("/notices", function(req, res){
   res.render("notices");
 });
 
+
+app.get("/admin",function(req,res){
+  res.render("admin/login");
+});
+
+
 app.listen(3000, function() {
   console.log("Server started on port 3000");
 });

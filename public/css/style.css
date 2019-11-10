@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
 
 body {
+  position: relative;
     color: #383749;
     font-size: 16px;
     line-height: 1.8;
@@ -16,6 +17,92 @@ img {
 # Links
 --------------------------------------------------------------*/
 
+/*Admin*/
+
+.loginBox{
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  width: 350px;
+  height: 420px;
+  padding: 80px 40px;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.5);
+}
+.SignUpBox{
+  position: relative;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  padding: 6% 5%;
+  width: 70%;
+  height: 90%;
+  box-sizing: border-box;
+  /* background: rgba(0, 0, 0, 0.5); */
+}
+
+.loginBox h2, .SignUpBox h2{
+  margin: 0;
+  padding: 0 0 20px;
+  text-align: center;
+  color: #ff6464;
+}
+.loginBox p ,.SignUpBox p{
+  margin: 0;
+  font-weight: bold;
+  color: #ff8080;
+}
+.loginBox input, .SignUpBox input{
+  width: 100%;
+  margin-bottom: 20px;
+}
+.loginBox input[type="email"], .loginBox input[type="password"],.SignUpBox input[type="email"]{
+  border: none;
+  border-bottom: 1px solid #fff;
+  background: transparent;
+  outline: none;
+  height: 30px;
+  color: #5edfff;
+  font-size: 16px;
+}
+.loginBox input[type="submit"],.SignUpBox input[type="submit"]{
+  border:none;
+  outline: none;
+  height: 40px;
+  font-size: 16px;
+  background: #b2fcff;
+  cursor: pointer;
+  border-radius: 25px;
+}
+.loginBox input[type="submit"]:hover, .SignUpBox input[type="submit"]:hover{
+  background: #ff6464;
+  color:#fff;
+}
+
+.loginBox ::placeholder ,.SignUpBox ::placeholder{
+  color:#5edfff64;
+}
+.loginBox a:visited,.loginBox a, .SignUpBox a:visited, .SignUpBox a{
+  color: #ff6464;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+}
+.loginBox a:hover,.SignUpBox a:hover{
+  color: #8186d5;
+}
+
+.adminimg{
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  position: absolute;
+  top:-50px;
+  left: calc(50% - 50px);
+}
+/*Admin*/
+
 /* Contact */
 .h1Contact {
   padding: 2%;
@@ -26,14 +113,14 @@ img {
   letter-spacing: 4px;
 }
 .contact{
-  /* margin: 3% 5% 3% 5%; */
+  padding:120px 5px 50px;
   display: block;
   text-align: center;
   /* background-image: -webkit-linear-gradient(65deg, #ffeeccc8 30%, #64c4edc8 65%); */
   background-image: linear-gradient(to bottom, #3498dbc8, #9b59b6c8);
 }
-.Login_Box{
-  padding: 3%;
+.Contact_Box{
+  padding: 3%
   /* background-color: #ffeeccc8; */
 
 }
@@ -49,12 +136,12 @@ img {
 .Message{
   width: 70%;
 }
-.Login_Box input[type="text"]:focus,.Login_Box input[type="text"]:hover,.Login_Box input[type="email"]:focus,.Login_Box input[type="email"]:hover{
+.Contact_Box input[type="text"]:focus,.Contact_Box input[type="text"]:hover,.Contact_Box input[type="email"]:focus,.Contact_Box input[type="email"]:hover{
   transition: 0.2s;
   width: 300px;
 }
 
-.Login_Box button[type="submit"] {
+.Contact_Box button[type="submit"] {
   border-radius: 25px;
 }
 
@@ -65,7 +152,7 @@ img {
 }
 .visioncontent{
   margin:0 9% 0 11%;
-  padding:3.125%;
+  padding:120px 5px 50px;
 }
 .visioncontent p{
   font-size: 20px;
@@ -93,10 +180,19 @@ a.nav-link:hover{
   background-color: #e3e7f1;
   color: white;
 }
-
-.andriodbutton{
-  margin: 10px;
-  padding: 10px;
+.downloadbuttons{
+  padding: 20px;
+}
+div.downloadbuttons button{
+  position: relative;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  margin: 5px;
+  padding: 1%;
+}
+div button.andriodbutton{
+  margin-left: -10%;
   background-color: #c70d3a;
 }
 
@@ -105,11 +201,7 @@ a.nav-link:hover{
 }
 
 .intro .entry-header{
-  margin-top: 150px;
-}
-
-.intro button{
-  margin-top: 400px;
+  margin-top: 14%;
 }
 
 .home{
@@ -118,16 +210,13 @@ a.nav-link:hover{
 }
 
 .csit-logo{
-  width:519px;
-  height: 160px;
+  width:90%;
+  height: 40%;
+
 }
 
 a {
     color: #383749;
-}
-div.playstore{
-  position: relative;
-  left: 85rem;
 }
 
 
@@ -165,24 +254,16 @@ first-footer{
 
 
 .time_syll_stud_Container{
-  padding: 1%
+  padding:120px 5px 50px;
 }
 
-.time_syll_stud_Container h1, h2{
+.time_syll_stud_Container h1, .time_syll_stud_Container h2{
   padding: 2.5%;
   color: #0077B5;
 }
 
-.applebutton{
-  padding: 10px;
-  margin: 10px;
-}
 
-
-@media (max-width:1100px) {
-  div.playstore {
-    left:0;
-  }
+@media (max-width:1300px) {
   img.csit-logo{
     width: 259px;
     height: 77px;
@@ -190,25 +271,6 @@ first-footer{
   h1.site-title a {
       color: #5f6769;
   }
-  .intro div button{
-    margin: 10px;
-    margin-top: 80px;
-  }
-}
-
-.icon-image{
-  width: 50px;
-  height: 45px;
-  /* text-align: center; */
-}
-
-.icon-image:hover{
-  color: #4dd599;
-  /* background-color: #757686; */
-}
-
-#icon-image1{
-  color: #4dd599;
 }
 
 
@@ -372,9 +434,10 @@ a:hover, a:active {
 /*
 # Nav Bar
 --------------------------------*/
-.nav-bar {
-    padding: 20px 0;
-    background: rgba(255,255,255,.1);
+nav.navbar{
+  position: fixed;
+  width: 100%;
+  z-index: 1;
 }
 
 /*
@@ -538,14 +601,13 @@ a:hover, a:active {
 --------------------------------------------------------------*/
 
 
-
 .hero-content-overlay {
     background: rgba(21,20,33,.5);
 }
 
-.hero-content-wrap {
-    height: 820px;
-    padding-top: 130px;
+.hero-content-wrap{
+    height: 930px;
+    padding-top: 10%;
 }
 
 .hero-content-wrap h4 {
