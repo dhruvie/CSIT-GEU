@@ -52,8 +52,8 @@ app.get("/notices", function(req, res) {
   res.render("notices");
 });
 
+app.get("/admin",function(req,res){
 
-app.get("/admin", function(req, res) {
   res.render("admin/login");
 });
 

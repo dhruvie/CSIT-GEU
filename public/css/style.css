@@ -295,6 +295,7 @@ div button.andriodbutton{
   margin-top: 14%;
 }
 
+
 .home{
   margin-right: 70px;
   padding-left: 30px;
@@ -352,7 +353,6 @@ first-footer{
   padding: 2.5%;
   color: #0077B5;
 }
-
 
 @media (max-width:1300px) {
   img.csit-logo{
@@ -761,6 +761,7 @@ nav.navbar{
 .icon-boxes h2{
   color: #0077B5;
 }
+
 
 .icon-box {
     width: 25%;
