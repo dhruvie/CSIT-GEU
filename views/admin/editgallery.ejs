@@ -1,0 +1,47 @@
+<%- include("../partials/headeradmin");  %>
+
+
+<h3>Add New Images</h3>
+<div class="row text-center text-lg-left">
+  <form action="/admin/editgallery/uploads" method="post" enctype="multipart/form-data">
+    <input type="file" accept="image/png, image/jpeg" name="photo">
+    <button class="btn btn-success" type="submit" disabled>Upload</button>
+  </form>
+</div>
+
+<br>
+<br>
+<h4>Images in Galleries</h4>
+
+
+<%   imageArray.forEach(function(image){ %>
+<%    let imageLocation = "../uploads/" + image.name; %>
+<div class="row">
+  <div class="col-lg-6 col-md-6 col-sm-6">
+    <a href="#" class="d-block mb-4 h-100">
+      <img class="img-fluid img-thumbnail" src="<%= imageLocation %>" alt="image not found" style="max-height:250px; max-width:250px;">
+    </a>
+  </div>
+
+  <div class="col-lg-6 col-md-6 col-sm-6">
+    <form action="/admin/editgallery/updateImage" method="post" enctype="multipart/form-data">
+      <input type="file" accept="image/*" name="photo">
+      <button class="btn btn-success" type="submit" disabled name="update" value=<%= image.name %>>Update</button>
+    </form>
+
+    <form class="" action="/admin/editgallery/deleteImage" method="post">
+      <button class="btn btn-danger" type="submit" name="delete" value=<%= image.name %>>Delete</button>
+    </form>
+
+  </div>
+</div>
+
+<%   }); %>
+<script type="text/javascript">
+  $('input:file').on("change", function() {
+    $('button:submit').prop('disabled', !$(this).val());
+  });
+</script>
+
+
+<%- include("../partials/footeradmin");  %>
