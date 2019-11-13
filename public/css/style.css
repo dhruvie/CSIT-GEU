@@ -12,7 +12,14 @@ body {
 img {
     vertical-align: baseline;
 }
+.gallerySection{
+  padding-top: 250px;
+}
 
+.EditSection input[type="file"], .EditSection input[type="text"], .EditSection textarea{
+margin: 2% 0;
+padding: 2% 0;
+}
 /*--------------------------------------------------------------
 # Links
 --------------------------------------------------------------*/

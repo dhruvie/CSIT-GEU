@@ -5,6 +5,13 @@ const uniqueValidator = require("mongoose-unique-validator");
 
 let url = "mongodb://localhost/csit";
 
+const express = require('express');
+const bodyParser = require('body-parser');
+const app = express();
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
+
 const db = mongoose.connect(url, {
   useNewUrlParser: true,
   useUnifiedTopology: true
@@ -88,11 +95,31 @@ var newsletterUserSchema = new mongoose.Schema({
     required: [true, "No Email-id specified, check the entry"],
     unique: [true, "Dublicate email"]
   },
-  date: Date
+
+  date : Date,
+  content: {
+    type: String,
+  }
+});
+
+var SyllabusSchema = new mongoose.Schema({
+  name : {
+    type: String,
+    required : [true, "No name Specified, Check the error!!!"]
+  },
+  specialisation: String,
+  semester: {
+    type: Number,
+    required : [true, "No semester Specified, Check the error!!!"]
+  },
+  date : Date,
+  content: {
+    type: String,
+  }
 });
 newsletterUserSchema.plugin(uniqueValidator);
 
-exports.Gallery = mongoose.model("gallery", gallerySchema);
+exports.Gallery = mongoose.model("gallery",  gallerySchema);
 
 exports.Page = mongoose.model("page", pageSchema);
 
@@ -103,3 +130,5 @@ exports.AdminLogin = mongoose.model("adminlogin", adminLoginSchema);
 exports.TimeTable = mongoose.model("timetable", timeTableSchema);
 
 exports.NewsletterUser = mongoose.model("newsletteruser", newsletterUserSchema);
+
+exports.Syllabus = mongoose.model("syllabus", SyllabusSchema);
