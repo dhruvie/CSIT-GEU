@@ -1,5 +1,5 @@
-//jshint esversion:8
-
+//jshint esversion:6
+require("dotenv").config();
 
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -16,8 +16,6 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 app.use(express.static("public"));
-
-
 
 
 app.get("/", function(req, res) {
@@ -51,6 +49,13 @@ app.get("/students", function(req, res) {
 app.get("/notices", function(req, res) {
   res.render("notices");
 });
+
+const Newsletter = require(__dirname + "/controllers/newsletter");
+app.post("/register", Newsletter.register);
+
+app.get("/unsubscribe", Newsletter.getUnsubscribe);
+app.post("/unsubscribe", Newsletter.unsubscribe);
+
 
 app.get("/admin",function(req,res){
 
@@ -87,6 +92,9 @@ app.get("/gallery", Gallery.gallery);
 
 const EditPost = require(__dirname + "/controllers/editpost");
 app.post("/admin/editpost", EditPost.editPost);
+
+const SendMail = require(__dirname + "/controllers/sendmail");
+app.post("/admin/sendmail", SendMail.send);
 
 app.listen(3000, function() {
   console.log("Server started on port 3000");
