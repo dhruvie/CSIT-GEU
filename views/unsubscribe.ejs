@@ -1,0 +1,21 @@
+<%- include("partials/header"); -%>
+
+<div class="jumbotron text-center">
+  <h1 class="display-3">Are you Sure?</h1>
+  <p class="lead"><strong>You will not be notified</strong> for further notices.</p>
+  <hr>
+  <p>
+    Having trouble? <a href="/contact">Contact us</a>
+  </p>
+  <form action="/unsubscribe" method="post">
+    <input type="text" name="email" placeholder="enter your e-mail address">
+    <p class="lead">
+      <button class="btn btn-danger" type="submit" href="/" >Unsubscribe</button>
+    </p>
+  </form>
+
+</div>
+
+
+
+<%- include("partials/footer"); -%>
