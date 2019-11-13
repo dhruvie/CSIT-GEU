@@ -3,62 +3,30 @@
 <div class="container-fluid time_syll_stud_Container">
   <h1>STUDENTS</h1>
 
-  <!-- <h2>TIME TABLE 4SEM, 6SEM, 8SEM JAN 2019</h2> -->
   <div class="icon-boxes">
     <div class="container-fluid">
       <div class="flex flex-wrap align-items-stretch">
-        <div class="icon-box">
-          <div class="icon">
-            <i class="fas fa-user-clock"></i>
-          </div><!-- .icon -->
-          <header class="entry-header">
-            <h2 class="entry-title">3rd SEM 2019</h2>
-          </header><!-- .entry-header -->
+      <%  FileArray.forEach(function(file){ %>
+            <% var FileLocation= "uploads/pdfs/" + file.name; %>
+            <% var r=""; if(file.semester===1){r="st";}else if(file.semester===2) { r="nd";}else if(file.semester===3){r="rd"; }else{r="th";} %>
+            <div class="icon-box">
+              <div class="icon">
+                <i class="fas fa-user-clock"></i>
+              </div><!-- .icon -->
 
-          <div class="entry-content">
-            <p>Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</p>
-          </div><!-- .entry-content -->
+              <header class="entry-header">
+                <h2 class="entry-title"> <%= file.semester + r  %> SEM TIME-TABLE 2019</h2>
+              </header><!-- .entry-header -->
 
-          <footer class="entry-footer read-more">
-            <a href="#">read more<i class="fa  fas fa-arrow-right"></i></a>
-          </footer><!-- .entry-footer -->
-        </div><!-- .icon-box -->
+              <div class="entry-content">
+                <p> <%= file.content %> </p>
+              </div>
 
-        <div class="icon-box">
-          <div class="icon">
-            <i class="fas fa-user-clock"></i>
-          </div><!-- .icon -->
-
-          <header class="entry-header">
-            <h2 class="entry-title">5th SEM 2019</h2>
-          </header><!-- .entry-header -->
-
-          <div class="entry-content">
-            <p>Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</p>
-          </div><!-- .entry-content -->
-
-          <footer class="entry-footer read-more">
-            <a href="#">read more<i class="fa  fas fa-arrow-right"></i></a>
-          </footer><!-- .entry-footer -->
-        </div><!-- .icon-box -->
-
-        <div class="icon-box">
-          <div class="icon">
-            <i class="fas fa-user-clock"></i>
-          </div><!-- .icon -->
-
-          <header class="entry-header">
-            <h2 class="entry-title">7th SEM 2019</h2>
-          </header><!-- .entry-header -->
-
-          <div class="entry-content">
-            <p>Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</p>
-          </div><!-- .entry-content -->
-
-          <footer class="entry-footer read-more">
-            <a href="#">read more<i class="fa  fas fa-arrow-right"></i></a>
-          </footer><!-- .entry-footer -->
-        </div><!-- .icon-box -->
+              <footer class="entry-footer read-more">
+                <a href=<%= FileLocation + ".pdf" %> target="_blank" >read more<i class="fa  fas fa-arrow-right"></i></a>
+              </footer><!-- .entry-footer -->
+            </div><!-- .icon-box -->
+      <%  }) %>
       </div>
     </div>
   </div>

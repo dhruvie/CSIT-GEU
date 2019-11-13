@@ -4,6 +4,13 @@ const mongoose = require("mongoose");
 
 let url = "mongodb://localhost/csit";
 
+const express = require('express');
+const bodyParser = require('body-parser');
+const app = express();
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
+
 const db = mongoose.connect(url, {
   useNewUrlParser : true,
   useUnifiedTopology: true
@@ -77,8 +84,28 @@ var timeTableSchema = new mongoose.Schema({
     type: Number,
     required : [true, "No semester Specified, Check the error!!!"]
   },
-  date : Date
+  date : Date,
+  content: {
+    type: String,
+  }
 });
+
+var SyllabusSchema = new mongoose.Schema({
+  name : {
+    type: String,
+    required : [true, "No name Specified, Check the error!!!"]
+  },
+  specialisation: String,
+  semester: {
+    type: Number,
+    required : [true, "No semester Specified, Check the error!!!"]
+  },
+  date : Date,
+  content: {
+    type: String,
+  }
+});
+
 
 exports.Gallery = mongoose.model("gallery",  gallerySchema);
 
@@ -89,3 +116,5 @@ exports.Message = mongoose.model("message",messageSchema);
 exports.AdminLogin = mongoose.model("adminlogin",adminLoginSchema);
 
 exports.TimeTable = mongoose.model("timetable", timeTableSchema);
+
+exports.Syllabus = mongoose.model("syllabus", SyllabusSchema);

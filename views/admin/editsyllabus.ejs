@@ -4,10 +4,11 @@
 <div class="EditSection">
   <div class="row text-center text-lg-left">
     <div class="col-lg-6 col-md-6 col-sm-12">
-      <form action="/admin/editpost/uploads/pdf" method="post" enctype="multipart/form-data">
+      <form action="/admin/editsyllabus/uploads/pdf" method="post" enctype="multipart/form-data">
         <br>
         <input type="file" accept=".pdf, .doc,.docx,.xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" name="myFiles">
         <input type="text" name="Sem" value="" placeholder="Enter Semester in Number">
+        <input type="text" name="spec" value="" autocomplete="off" placeholder="Enter Specialisation(if any)">
         <textarea name="Content" rows="8" cols="50" placeholder="Enter some details about the pdf..."></textarea>
         <button class="btn btn-success" type="submit" disabled>Upload</button>
       </form>
@@ -20,7 +21,8 @@
 <div class="">
   <table class="table table-striped table-hover">
     <tr>
-      <th>Time-Table of Semester</th>
+      <th>Semester</th>
+      <th>Specialisation</th>
       <th>Published</th>
       <th>Content</th>
       <th>Actions</th>
@@ -28,10 +30,11 @@
     <% FileArray.forEach(function(file){ %>
     <tr>
       <td> <%= file.semester %> </td>
+      <td> <%= file.specialisation %> </td>
       <td> <%= file.date %> </td>
       <td> <%= file.content %> </td>
       <td>
-        <form class="" action="/admin/editpost/delete/pdf" method="post">
+        <form class="" action="/admin/editsyllabus/delete/pdf" method="post">
           <button class="btn btn-danger" type="submit" name="delete" value=<%= file.name %>>Delete</button>
         </form>
       </td>

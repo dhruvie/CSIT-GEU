@@ -2,6 +2,7 @@
 
 const db = require("../model/database.js");
 const fs = require("fs");
+
 exports.gallery = function(req, res) {
   db.Gallery.find({}, function(err, imageList) {
     if (err) {
