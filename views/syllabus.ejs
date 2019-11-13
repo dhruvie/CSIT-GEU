@@ -6,58 +6,28 @@
   <div class="icon-boxes">
     <div class="container-fluid">
       <div class="flex flex-wrap align-items-stretch">
+        <% FileArray.forEach(function(file){ %>
+          <% var FileLocation= "uploads/pdfs/" + file.name; %>
+          <% var r=""; if(file.semester===1){r="st";}else if(file.semester===2) { r="nd";}else if(file.semester===3){r="rd"; }else{r="th";} %>
         <div class="icon-box">
           <div class="icon">
             <i class="fas fa-book-open"></i>
           </div><!-- .icon -->
           <header class="entry-header">
-            <h2 class="entry-title">SYLLABUS- CSE CORE</h2>
+            <h2 class="entry-title">SYLLABUS- <%= file.semester  + r + " SEM "+ file.specialisation %></h2>
           </header><!-- .entry-header -->
 
           <div class="entry-content">
-            <p>Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</p>
+            <p> <%= file.content %> </p>
           </div><!-- .entry-content -->
 
           <footer class="entry-footer read-more">
-            <a href="#">read more<i class="fa  fas fa-arrow-right"></i></a>
+            <a href= <%= FileLocation + ".pdf" %> target="_blank" >read more<i class="fa  fas fa-arrow-right"></i></a>
           </footer><!-- .entry-footer -->
         </div><!-- .icon-box -->
 
-        <div class="icon-box">
-          <div class="icon">
-            <i class="fas fa-book-open"></i>
-          </div><!-- .icon -->
+        <% }); %>
 
-          <header class="entry-header">
-            <h2 class="entry-title">Syllabus CSE Specialisation</h2>
-          </header><!-- .entry-header -->
-
-          <div class="entry-content">
-            <p>Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</p>
-          </div><!-- .entry-content -->
-
-          <footer class="entry-footer read-more">
-            <a href="#">read more<i class="fa  fas fa-arrow-right"></i></a>
-          </footer><!-- .entry-footer -->
-        </div><!-- .icon-box -->
-
-        <div class="icon-box">
-          <div class="icon">
-            <i class="fas fa-book-open"></i>
-          </div><!-- .icon -->
-
-          <header class="entry-header">
-            <h2 class="entry-title">Syllabus IT</h2>
-          </header><!-- .entry-header -->
-
-          <div class="entry-content">
-            <p>Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</p>
-          </div><!-- .entry-content -->
-
-          <footer class="entry-footer read-more">
-            <a href="#">read more<i class="fa  fas fa-arrow-right"></i></a>
-          </footer><!-- .entry-footer -->
-        </div><!-- .icon-box -->
       </div>
     </div>
   </div>

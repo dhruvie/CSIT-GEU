@@ -8,6 +8,9 @@ const multer = require("multer");
 const upload = multer({
   dest: __dirname + "/public/uploads"
 });
+const uploadFile = multer({
+  dest: __dirname + "/public/uploads/pdfs"
+});
 
 const app = express();
 
@@ -36,17 +39,14 @@ app.get("/contact", function(req, res) {
   res.render("contact");
 });
 
-app.get("/syllabus", function(req, res) {
-  res.render("syllabus");
-});
+const Syllabus= require(__dirname + "/controllers/syllabus");
+app.get("/syllabus", Syllabus.syllabus);
 
-app.get("/timetable", function(req, res) {
-  res.render("timetable");
-});
+const TimeTable = require(__dirname + "/controllers/timetable");
+app.get("/timetable", TimeTable.timetables);
 
-app.get("/students", function(req, res) {
-  res.render("students");
-});
+const Student = require(__dirname + "/controllers/student");
+app.get("/students", Student.students);
 
 app.get("/notices", function(req, res) {
   res.render("notices");
@@ -86,7 +86,21 @@ const Gallery = require(__dirname + "/controllers/gallery");
 app.get("/gallery", Gallery.gallery);
 
 const EditPost = require(__dirname + "/controllers/editpost");
+app.get("/admin/editpost", EditPost.editPost);
+
 app.post("/admin/editpost", EditPost.editPost);
+
+app.post("/admin/editpost/delete/pdf", EditPost.deleteFile);
+
+app.post("/admin/editpost/uploads/pdf",uploadFile.single("myFiles"), EditPost.uploadFile);
+
+const EditSyllabus= require(__dirname+ "/controllers/editsyllabus");
+app.get("/admin/editsyllabus",EditSyllabus.editsyllabus);
+app.post("/admin/editsyllabus",EditSyllabus.editsyllabus);
+
+app.post("/admin/editsyllabus/uploads/pdf",uploadFile.single("myFiles"), EditSyllabus.uploadFile);
+
+app.post("/admin/editsyllabus/delete/pdf", uploadFile.single("myFiles"), EditSyllabus.deleteFile);
 
 app.listen(3000, function() {
   console.log("Server started on port 3000");
