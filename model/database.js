@@ -89,6 +89,22 @@ var timeTableSchema = new mongoose.Schema({
   date: Date
 });
 
+var homeSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: [true, "No name Specified, Check the error!!!"]
+  },
+  heading : {
+    type : String,
+    required : [true, "No Heading Specified, Check the Error!!!"]
+  },
+  date: Date,
+  content: {
+    type: String,
+  }
+});
+
+
 var newsletterUserSchema = new mongoose.Schema({
   email: {
     type: String,
@@ -101,6 +117,7 @@ var newsletterUserSchema = new mongoose.Schema({
     type: String,
   }
 });
+newsletterUserSchema.plugin(uniqueValidator);
 
 var SyllabusSchema = new mongoose.Schema({
   name : {
@@ -117,7 +134,34 @@ var SyllabusSchema = new mongoose.Schema({
     type: String,
   }
 });
-newsletterUserSchema.plugin(uniqueValidator);
+
+
+var NoticePlainSchema = new mongoose.Schema({
+  heading : {
+    type : String,
+    required : [true, "No Heading Specified, Check the Error!!!"]
+  },
+  date : Date,
+  content : {
+    type : String,
+  }
+});
+
+var NoticePdfSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: [true, "No name Specified, Check the error!!!"]
+  },
+  heading : {
+    type : String,
+    required : [true, "No Heading Specified, Check the Error!!!"]
+  },
+  date: Date,
+  content: {
+    type: String,
+  }
+});
+
 
 exports.Gallery = mongoose.model("gallery",  gallerySchema);
 
@@ -132,3 +176,9 @@ exports.TimeTable = mongoose.model("timetable", timeTableSchema);
 exports.NewsletterUser = mongoose.model("newsletteruser", newsletterUserSchema);
 
 exports.Syllabus = mongoose.model("syllabus", SyllabusSchema);
+
+exports.Home = mongoose.model("home", homeSchema);
+
+exports.NoticePlain = mongoose.model("noticePlain" , NoticePlainSchema );
+
+exports.NoticePdf = mongoose.model("noticePdf" , NoticePdfSchema );

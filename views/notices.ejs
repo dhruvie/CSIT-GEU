@@ -1,9 +1,46 @@
 <%- include("partials/header"); -%>
 
+<div class="container-fluid time_syll_stud_Container">
+  <h1>NOTICES</h1>
+  <div class="row" style="margin:0;">
+    <div class="col-lg-7 col-md-6">
+      <%  TextArray.forEach(function(text){ %>
+      <h2> <%= text.heading %> </h2>
+      <h5> <%= text.content %> </h5>
+      <br>
+      <% }) %>
+    </div>
 
+    <div class="col-lg-5 col-md-6">
 
+      <div class="icon-boxes">
+        <div class="container-fluid">
+          <div class="flex flex-wrap align-items-stretch">
+            <%  FileArray.forEach(function(file){ %>
+            <div class="icon-box" style="width:40%">
+              <div class="icon">
+                <i class="fas fa-user-clock"></i>
+              </div><!-- .icon -->
 
+              <header class="entry-header">
+                <h2 class="entry-title"> <%= file.heading %> </h2>
+              </header><!-- .entry-header -->
 
+              <div class="entry-content">
+                <%= file.content %>
+              </div>
+
+              <footer class="entry-footer read-more">
+                <a href=<%= "uploads/pdfs/" + file.name %> target="_blank">read more<i class="fa  fas fa-arrow-right"></i></a>
+              </footer><!-- .entry-footer -->
+            </div><!-- .icon-box -->
+            <% }) %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
