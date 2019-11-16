@@ -1,0 +1,51 @@
+<%- include("../partials/headeradmin.ejs");  %>
+
+<h3>Add New PDFs or Important Notice In HOME</h3>
+<div class="EditSection">
+  <div class="row text-center text-lg-left">
+    <div class="col-lg-6 col-md-6 col-sm-12">
+      <form action="/admin/edithome/uploads/pdf" method="post" enctype="multipart/form-data">
+        <br>
+        <input type="file" accept=".pdf, .doc,.docx,.xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" name="myFiles">
+        <input type="text" name="Heading" value="" placeholder="Enter Heading">
+        <textarea name="Content" rows="8" cols="50" placeholder="Enter some details about the pdf..."></textarea>
+        <button class="btn btn-success" type="submit" disabled>Upload</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<br>
+
+<div class="">
+  <table class="table table-striped table-hover">
+    <tr>
+      <th>Heading</th>
+      <th>Published</th>
+      <th>Content</th>
+      <th>Actions</th>
+    </tr>
+    <% FileArray.forEach(function(file){ %>
+    <tr>
+      <td> <%= file.heading %> </td>
+      <td> <%= file.date %> </td>
+      <td> <%= file.content %> </td>
+      <td>
+        <form class="" action="/admin/edithome/delete/pdf" method="post">
+          <button class="btn btn-danger" type="submit" name="delete" value= <%= file.name %> >Delete</button>
+        </form>
+      </td>
+    </tr>
+      <% }) %>
+    </table>
+</div>
+
+<script type="text/javascript">
+  $('input:file').on("change", function() {
+    $('input:text').on("change", function() {
+      $('button:submit').prop('disabled', !$(this).val());
+    });
+  });
+</script>
+
+<%- include("../partials/footeradmin.ejs");  %>

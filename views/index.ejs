@@ -21,11 +21,11 @@
         <div class="col-lg-4 col-md-6">
           <div class="SignUpBox">
             <h2>Sign Up</h2>
-            <form class="" action="/" method="post">
+            <form class="" action="/register" method="post">
               <p>Email</p>
-              <input type="email" name="" value="" placeholder="Enter Email ID">
+              <input type="email" name="email" placeholder="Enter Email ID" autocomplete="off">
               <input type="submit" name="" value="Subscribe">
-              <a class="ForgetPass" href="#">Forget Password</a>
+              <a class="ForgetPass" href="/unsubscribe">Turn off Notifications</a>
             </form>
           </div>
           <div class="downloadbuttons">
@@ -42,23 +42,28 @@
 <div class="icon-boxes">
   <div class="container-fluid">
     <div class="flex flex-wrap align-items-stretch">
+
+      <% FileArray.forEach(function(file){  %>
+
       <div class="icon-box">
         <div class="icon">
           <i class="fas fa-book-open"></i>
         </div><!-- .icon -->
 
         <header class="entry-header">
-          <h2 class="entry-title">SYLLABUS- All Semester</h2>
+          <h2 class="entry-title"> <%= file.heading %> </h2>
         </header><!-- .entry-header -->
 
         <div class="entry-content">
-          <p>Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</p>
+          <p> <%= file.content%> </p>
         </div><!-- .entry-content -->
 
         <footer class="entry-footer read-more">
-          <a href="#">read more<i class=" fa fas fa-arrow-right"></i></a>
+          <a href= <%= "uploads/pdfs/" + file.name %> >read more<i class=" fa fas fa-arrow-right"></i></a>
         </footer><!-- .entry-footer -->
       </div><!-- .icon-box -->
+
+      <% }) %>
 
       <div class="icon-box">
         <div class="icon">
@@ -225,7 +230,7 @@
       </div><!-- .icon-box -->
 
 
-      <div class="icon-box">
+      <!-- <div class="icon-box">
         <div class="icon">
           <i class="fas fa-university"></i>
         </div>
@@ -241,12 +246,9 @@
         <footer class="entry-footer read-more">
           <a href="#">read more<i class="fa  fas fa-arrow-right"></i></a>
         </footer>
-      </div>
+      </div> -->
 
 
-    </div><!-- .row -->
-  </div><!-- .container-fluid -->
-</div><!-- .icon-boxes -->
 
 
 

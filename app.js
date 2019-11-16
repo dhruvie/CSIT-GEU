@@ -1,5 +1,5 @@
-//jshint esversion:8
-
+//jshint esversion:6
+require("dotenv").config();
 
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -20,12 +20,8 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(express.static("public"));
 
-
-
-
-app.get("/", function(req, res) {
-  res.render("index");
-});
+const Home = require(__dirname + "/controllers/home");
+app.get("/", Home.home);
 
 app.get("/visionandmission", function(req, res) {
   res.render("vision-mission");
@@ -48,12 +44,16 @@ app.get("/timetable", TimeTable.timetables);
 const Student = require(__dirname + "/controllers/student");
 app.get("/students", Student.students);
 
-app.get("/notices", function(req, res) {
-  res.render("notices");
-});
+
+const Newsletter = require(__dirname + "/controllers/newsletter");
+app.post("/register", Newsletter.register);
+
+app.get("/unsubscribe", Newsletter.getUnsubscribe);
+app.post("/unsubscribe", Newsletter.unsubscribe);
 
 
-app.get("/admin", function(req, res) {
+app.get("/admin",function(req,res){
+
   res.render("admin/login");
 });
 
@@ -90,6 +90,8 @@ app.get("/admin/editpost", EditPost.editPost);
 
 app.post("/admin/editpost", EditPost.editPost);
 
+const SendMail = require(__dirname + "/controllers/sendmail");
+app.post("/admin/sendmail", SendMail.send);
 app.post("/admin/editpost/delete/pdf", EditPost.deleteFile);
 
 app.post("/admin/editpost/uploads/pdf",uploadFile.single("myFiles"), EditPost.uploadFile);
@@ -101,6 +103,37 @@ app.post("/admin/editsyllabus",EditSyllabus.editsyllabus);
 app.post("/admin/editsyllabus/uploads/pdf",uploadFile.single("myFiles"), EditSyllabus.uploadFile);
 
 app.post("/admin/editsyllabus/delete/pdf", uploadFile.single("myFiles"), EditSyllabus.deleteFile);
+
+const EditHome = require(__dirname + "/controllers/edithome");
+app.get("/admin/edithome", EditHome.edithome);
+app.post("/admin/edithome", EditHome.edithome);
+
+app.post("/admin/edithome/uploads/pdf", uploadFile.single("myFiles"), EditHome.uploadFile);
+
+app.post("/admin/edithome/delete/pdf", uploadFile.single("myFiles"), EditHome.deleteFile);
+
+const EditPlainNotice = require(__dirname + "/controllers/editPlainNotice");
+app.get("/admin/editplainnotice", EditPlainNotice.editplainNotice);
+app.post("/admin/editplainnotice", EditPlainNotice.editplainNotice);
+
+app.post("/admin/editplainnotice/uploads/text", EditPlainNotice.uploadText);
+
+app.post("/admin/editplainnotice/delete/text", EditPlainNotice.deleteText);
+
+
+const EditPdfNotice = require(__dirname + "/controllers/editPdfNotice");
+app.get("/admin/editpdfnotice", EditPdfNotice.editpdfNotice);
+app.post("/admin/editpdfnotice", EditPdfNotice.editpdfNotice);
+
+app.post("/admin/editpdfnotice/uploads/pdf", uploadFile.single("myFiles"), EditPdfNotice.uploadFile);
+
+app.post("/admin/editpdfnotice/delete/pdf", uploadFile.single("myFiles"), EditPdfNotice.deleteFile);
+
+const Notice = require(__dirname + "/controllers/notice");
+app.post("/admin/editnotice", Notice.editnotice);
+
+app.get("/notices", Notice.notice);
+
 
 app.listen(3000, function() {
   console.log("Server started on port 3000");

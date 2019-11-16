@@ -16,11 +16,16 @@ exports.editsyllabus=(req,res)=>{
 
 exports.uploadFile = function(req, res) {
   let File = new db.Syllabus({
-    name: req.file.filename,
+    name: req.file.filename + ".pdf",
     semester: req.body.Sem,
     specialisation: req.body.spec,
     date: new Date(),
     content: req.body.Content
+  });
+  fs.rename(__dirname + "/../public/uploads/pdfs/" + req.file.filename , __dirname + "/../public/uploads/pdfs/" + req.file.filename + ".pdf", (err)=>{
+    if(err){
+      console.log(err);
+    }
   });
   File.save();
   res.redirect("/admin/editsyllabus");

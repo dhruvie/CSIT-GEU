@@ -15,10 +15,15 @@ exports.editPost = (req, res) => {
 
 exports.uploadFile = function(req, res) {
   let File = new db.TimeTable({
-    name: req.file.filename,
+    name: req.file.filename + ".pdf",
     semester: req.body.Sem,
     date: new Date(),
     content: req.body.Content
+  });
+  fs.rename(__dirname + "/../public/uploads/pdfs/" + req.file.filename , __dirname + "/../public/uploads/pdfs/" + req.file.filename + ".pdf", (err)=>{
+    if(err){
+      console.log(err);
+    }
   });
   File.save();
   res.redirect("/admin/editpost");
