@@ -3,6 +3,10 @@
 const mongoose = require("mongoose");
 const uniqueValidator = require("mongoose-unique-validator");
 
+const session = require("express-session");
+const passport = require("passport");
+const passportLocalMongoose = require("passport-local-mongoose");
+
 let url = "mongodb://localhost/csit";
 
 const express = require('express');
@@ -12,10 +16,48 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
-const db = mongoose.connect(url, {
+
+app.use(session({
+  secret: process.env.SECRET,
+  resave: false,
+  saveUninitialized: true
+}));
+
+
+mongoose.connect(url, {
   useNewUrlParser: true,
-  useUnifiedTopology: true
+  useUnifiedTopology: true,
+  useCreateIndex : true
 });
+
+url = "mogodb://localhost/csit";
+mongoose.connect(url, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex : true
+});
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+var adminSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: [true, "No name Specified, Check the error!!!"]
+  },
+  joined: Date,
+  canAddUsers: {
+    type: Boolean,
+    required: [true, "isManager not Specified, Check the error!!!"]
+  }
+});
+adminSchema.plugin(uniqueValidator);
+adminSchema.plugin(passportLocalMongoose);
+var Admin = new mongoose.model("admin", adminSchema);
+
+passport.use(Admin.createStrategy());
+passport.serializeUser(Admin.serializeUser());
+passport.deserializeUser(Admin.deserializeUser());
 
 var gallerySchema = new mongoose.Schema({
   name: {
@@ -55,27 +97,7 @@ var messageSchema = new mongoose.Schema({
   semester: Number
 });
 
-var adminLoginSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: [true, "No name Specified, Check the error!!!"]
-  },
-  email: {
-    type: String,
-    required: [true, "No E-mail Specified, Check the error!!!"],
-    unique: true
-  },
-  password: {
-    type: String,
-    required: [true, "No password Specified, Check the error!!!"]
-  },
-  joined: Date,
-  isManager: {
-    type: Boolean,
-    required: [true, "isManager not Specified, Check the error!!!"]
-  }
-});
-adminLoginSchema.plugin(uniqueValidator);
+
 
 var timeTableSchema = new mongoose.Schema({
   name: {
@@ -163,13 +185,15 @@ var NoticePdfSchema = new mongoose.Schema({
 });
 
 
+
+
 exports.Gallery = mongoose.model("gallery",  gallerySchema);
 
 exports.Page = mongoose.model("page", pageSchema);
 
 exports.Message = mongoose.model("message", messageSchema);
 
-exports.AdminLogin = mongoose.model("adminlogin", adminLoginSchema);
+// exports.Admin = Admin;
 
 exports.TimeTable = mongoose.model("timetable", timeTableSchema);
 
