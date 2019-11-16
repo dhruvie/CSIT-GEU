@@ -5,6 +5,9 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const ejs = require('ejs');
 const multer = require("multer");
+
+
+
 const upload = multer({
   dest: __dirname + "/public/uploads"
 });
@@ -57,9 +60,31 @@ app.get("/unsubscribe", Newsletter.getUnsubscribe);
 app.post("/unsubscribe", Newsletter.unsubscribe);
 
 
-app.get("/admin",function(req,res){
+app.get("/admin/register", function(req, res){
+  res.render("admin/register");
+});
 
+const AdminRegister = require(__dirname + "/controllers/adminregister");
+app.post("/admin/register", AdminRegister.register);
+
+app.get("/admin/login",function(req,res){
   res.render("admin/login");
+});
+
+// const AdminLogin = require(__dirname + "/controllers/adminlogin");
+app.post("/admin/login", function(req, res){
+  var admin = {
+    username : req.body.email,
+    password : req.body.password
+  };
+  req.login(admin, function(err){
+    if(err){
+      console.log(err);
+      res.redirect("/admin/login");
+    } else{
+      console.log("hurrey");
+    }
+  });
 });
 
 app.get("/admin/index", function(req, res) {
