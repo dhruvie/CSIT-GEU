@@ -20,8 +20,10 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(express.static("public"));
 
+
 const Home = require(__dirname + "/controllers/home");
 app.get("/", Home.home);
+
 
 app.get("/visionandmission", function(req, res) {
   res.render("vision-mission");

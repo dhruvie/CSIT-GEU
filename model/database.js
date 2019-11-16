@@ -104,12 +104,14 @@ var homeSchema = new mongoose.Schema({
   }
 });
 
+
 var newsletterUserSchema = new mongoose.Schema({
   email: {
     type: String,
     required: [true, "No Email-id specified, check the entry"],
     unique: [true, "Dublicate email"]
   },
+
   date : Date,
   content: {
     type: String,
@@ -132,6 +134,7 @@ var SyllabusSchema = new mongoose.Schema({
     type: String,
   }
 });
+
 
 var NoticePlainSchema = new mongoose.Schema({
   heading : {
