@@ -7,7 +7,8 @@ const session = require("express-session");
 const passport = require("passport");
 const passportLocalMongoose = require("passport-local-mongoose");
 
-let url = "mongodb://localhost/csit";
+// let url = "mongodb://localhost/csit";
+let url="mongodb+srv://admin-deep:Dhruvj10@cluster0-3nqki.mongodb.net/csit";
 
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -30,12 +31,6 @@ mongoose.connect(url, {
   useCreateIndex : true
 });
 
-url = "mogodb://localhost/csit";
-mongoose.connect(url, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useCreateIndex : true
-});
 
 app.use(passport.initialize());
 app.use(passport.session());
